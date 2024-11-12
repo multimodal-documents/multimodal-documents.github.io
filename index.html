@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework"
+    />
+    <meta
+      name="keywords"
+      content="Multimodal,Benchmark,Documents,Retrieval,Tuning"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding
+      And A Retrieval-Aware Tuning Framework
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="./static/images/favicon.svg" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <a class="navbar-item" href="https://chiayewken.com">
+            <span class="icon">
+              <i class="fas fa-home"></i>
+            </span>
+          </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More Research </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://puzzlevqa.github.io">
+                PuzzleVQA
+              </a>
+              <a class="navbar-item" href="https://instruct-eval.github.io">
+                InstructEval
+              </a>
+              <a
+                class="navbar-item"
+                href="https://github.com/declare-lab/HyperRED"
+              >
+                HyperRED
+              </a>
+              <a
+                class="navbar-item"
+                href="https://github.com/chiayewken/Span-ASTE"
+              >
+                Span-ASTE
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-2 publication-title">
+                M-Longdoc: A Benchmark For Multimodal Super-Long Document
+                Understanding And A Retrieval-Aware Tuning Framework
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://chiayewken.com">Yew Ken Chia</a
+                  ><sup>* 1,3</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://liyingcheng95.github.io">Liying Cheng</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://kenchan0226.github.io">Hou Pong Chan</a
+                  ><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://liuchaoqun.github.io">Chaoqun Liu</a
+                  ><sup>1, 2</sup>,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://scholar.google.com/citations?user=J1cg8fIAAAAJ&hl=zh-CN"
+                    >Maojia Song</a
+                  ><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/mahani-aljunied-a3607378"
+                    >Sharifah Mahani Aljunied</a
+                  ><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://soujanyaporia.github.io">Soujanya Poria</a
+                  ><sup>3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://lidongbing.github.io">Lidong Bing</a
+                  ><sup>1</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><sup>1</sup>DAMO Academy, Alibaba Group,
+                </span>
+                <span class="author-block"
+                  ><sup>2</sup>Nanyang Technological University,
+                </span>
+                <span class="author-block"
+                  ><sup>3</sup>Singapore University of Technology and
+                  Design</span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/pdf/2411.06176"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- Demo Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"> 🤗 </span>
+                      <span>Demo (Coming Soon)</span>
+                    </a>
+                  </span>
+                  <!--                            <span class="link-block">-->
+                  <!--                <a href="https://arxiv.org/abs/2011.12948"-->
+                  <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                  <!--                  <span class="icon">-->
+                  <!--                      <i class="ai ai-arxiv"></i>-->
+                  <!--                  </span>-->
+                  <!--                  <span>arXiv</span>-->
+                  <!--                </a>-->
+                  <!--              </span>-->
+                  <!--                            &lt;!&ndash; Video Link. &ndash;&gt;-->
+                  <!--                            <span class="link-block">-->
+                  <!--                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"-->
+                  <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                  <!--                  <span class="icon">-->
+                  <!--                      <i class="fab fa-youtube"></i>-->
+                  <!--                  </span>-->
+                  <!--                  <span>Video</span>-->
+                  <!--                </a>-->
+                  <!--              </span>-->
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code (Coming Soon)</span>
+                    </a>
+                  </span>
+                  <!--                            &lt;!&ndash; Dataset Link. &ndash;&gt;-->
+                  <!--                            <span class="link-block">-->
+                  <!--                <a href="https://github.com/google/nerfies/releases/tag/0.1"-->
+                  <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                  <!--                  <span class="icon">-->
+                  <!--                      <i class="far fa-images"></i>-->
+                  <!--                  </span>-->
+                  <!--                  <span>Data</span>-->
+                  <!--                  </a>-->
+                  <!--                </span>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img
+            id="evaluation"
+            src="./static/images/evaluation.png"
+            alt="M-LongDoc Evaluation Framework"
+            width="100%"
+          />
+          <h2 class="subtitle has-text-centered">
+            Our automated evaluation framework can reliably and scalably assess
+            the correctness of open-ended solutions for multimodal document
+            question answering.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!--    <section class="hero teaser">-->
+    <!--      <div class="container is-max-desktop">-->
+    <!--        <div class="hero-body">-->
+    <!--          <video id="teaser" autoplay muted loop playsinline height="100%">-->
+    <!--            <source src="./static/videos/framework.mp4" type="video/mp4" />-->
+    <!--          </video>-->
+    <!--          <h2 class="subtitle has-text-centered"></h2>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </section>-->
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                The ability to understand and answer questions over documents
+                can be useful in many business and practical applications.
+                However, documents often contain lengthy and diverse multimodal
+                contents such as texts, figures, and tables, which are very
+                time-consuming for humans to read thoroughly. Hence, there is an
+                urgent need to develop effective and automated methods to aid
+                humans in this task. In this work, we introduce M-LongDoc, a
+                benchmark of 851 samples, and an automated framework to evaluate
+                the performance of large multimodal models. We further propose a
+                retrieval-aware tuning approach for efficient and effective
+                multimodal document reading. Compared to existing works, our
+                benchmark consists of more recent and lengthy documents with
+                hundreds of pages, while also requiring open-ended solutions and
+                not just extractive answers. To our knowledge, our training
+                framework is the first to directly address the retrieval setting
+                for multimodal long documents. To enable tuning open-source
+                models, we construct a training corpus in a fully automatic
+                manner for the question-answering task over such documents.
+                Experiments show that our tuning approach achieves a relative
+                improvement of 4.6% for the correctness of model responses,
+                compared to the baseline open-source models.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img
+            id="retrieval"
+            src="./static/images/retrieval.png"
+            alt="M-LongDoc Retrieval-Aware Tuning"
+            width="100%"
+          />
+          <h2 class="subtitle has-text-centered">
+            Our retrieval-aware multimodal tuning framework to enhance the
+            ability of models to identify and utilize pertinent content in
+            multimodal documents. At training time, the model is provided with
+            more relevant pages retrieved from the document, which may contain
+            both the gold evidence page and multiple ‘distractor’ pages.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img
+            id="results"
+            src="./static/images/results.png"
+            alt="Results"
+            width="100%"
+          />
+          <h2 class="subtitle has-text-centered">
+            Evaluation of model performance for proprietary and open-source
+            multimodal models. We report the correctness on our benchmark across
+            different document domains and question categories. We find that our
+            retrieval-aware multimodal tuning significantly and consistently
+            enhances the performance of Qwen2-VL, representing a relative
+            improvement of 4.6% in answer correctness.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section">-->
+    <!--    <div class="container is-max-desktop">-->
+    <!--        &lt;!&ndash; Concurrent Work. &ndash;&gt;-->
+    <!--        <div class="columns is-centered">-->
+    <!--            <div class="column is-full-width">-->
+    <!--                <h2 class="title is-3">Related Links</h2>-->
+
+    <!--                <div class="content has-text-justified">-->
+    <!--                    <p>-->
+    <!--                        There's a lot of excellent work that was introduced around the same time as ours.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a>-->
+    <!--                        introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a-->
+    <!--                            href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>-->
+    <!--                        both use deformation fields to model non-rigid scenes.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        Some works model videos with a NeRF by directly modulating the density, such as <a-->
+    <!--                            href="https://video-nerf.github.io/">Video-NeRF</a>, <a-->
+    <!--                            href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a-->
+    <!--                            href="https://neural-3d-video.github.io/">DyNeRF</a>-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        There are probably many more by the time you are reading this. Check out <a-->
+    <!--                            href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>,-->
+    <!--                        and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF-->
+    <!--                        papers</a>.-->
+    <!--                    </p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;/ Concurrent Work. &ndash;&gt;-->
+    <!--    </div>-->
+    <!--</section>-->
+
+    <!--    <section class="section" id="BibTeX">-->
+    <!--      <div class="container is-max-desktop content">-->
+    <!--        <h2 class="title">BibTeX</h2>-->
+    <!--        <pre><code>@article{chia2024rpo,-->
+    <!--  author    = {Yew Ken Chia and Guizhen Chen and Weiwen Xu and Luu Anh Tuan and Soujanya Poria and Lidong Bing},-->
+    <!--  title     = {Reasoning Paths Optimization: Learning to Reason and Explore From Diverse Paths},-->
+    <!--  journal   = {EMNLP},-->
+    <!--  year      = {2024},-->
+    <!--}</code></pre>-->
+    <!--      </div>-->
+    <!--    </section>-->
+
+    <footer class="footer">
+      <div class="container">
+        <!--        <div class="content has-text-centered">-->
+        <!--            <a class="icon-link"-->
+        <!--               href="./static/videos/nerfies_paper.pdf">-->
+        <!--                <i class="fas fa-file-pdf"></i>-->
+        <!--            </a>-->
+        <!--            <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>-->
+        <!--                <i class="fab fa-github"></i>-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >, based on
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  >Nerfies</a
+                >.
+              </p>
+              <!--                    <p>-->
+              <!--                        This means you are free to borrow the <a-->
+              <!--                            href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,-->
+              <!--                        we just ask that you link back to this page in the footer.-->
+              <!--                        Please remember to remove the analytics code included in the header of the website which-->
+              <!--                        you do not want on your website.-->
+              <!--                    </p>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
